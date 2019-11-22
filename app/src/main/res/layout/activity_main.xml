@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,7 +30,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_horizontal_margin">
+            android:layout_marginBottom="32dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
@@ -57,21 +57,21 @@
             android:gravity="end"
             android:textSize="@dimen/textSizeBodySmall"
             android:textColor="@color/textColorMain"
-            android:textStyle="bold"
-            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:textStyle="normal"
+            android:layout_marginBottom="32dp"
             android:text="@string/label_forgot_password"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_height="40dp"
+            android:layout_marginBottom="32dp"
             android:text="@string/label_btn_login"
             android:background="@drawable/bg_btn_login"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="32dp"
             android:orientation="horizontal">
             <View
                 android:layout_width="0dp"
@@ -106,10 +106,11 @@
                 app:icon="@drawable/ic_facebook_logo"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:text="@string/label_btn_login_facebook"
-                android:background="@drawable/bg_btn_facebook"
+                app:backgroundTint="#1565C0"
                 android:textSize="@dimen/textSizeBody"
+                android:textAppearance="@style/Widget.MaterialComponents.Button"
                 android:textColor="@color/textColorPrimary"
-                app:iconGravity="start"
+                app:iconGravity="textStart"
                 android:layout_height="wrap_content"/>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_login_google"
@@ -118,9 +119,10 @@
                 style="@style/Widget.MaterialComponents.Button.Icon"
                 app:icon="@drawable/ic_google_plus_logo"
                 android:text="@string/label_btn_login_google"
-                android:background="@drawable/bg_btn_google"
+                android:textAppearance="@style/Widget.MaterialComponents.Button"
+                app:backgroundTint="#F44336"
                 android:textSize="@dimen/textSizeBody"
-                app:iconGravity="start"
+                app:iconGravity="textStart"
                 android:textColor="@color/textColorPrimary"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
