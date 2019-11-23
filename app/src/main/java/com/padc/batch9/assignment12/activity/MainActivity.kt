@@ -5,6 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.facebook.CallbackManager
+import com.facebook.FacebookSdk
+import com.facebook.appevents.AppEventsLogger
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -17,14 +20,18 @@ import com.padc.batch9.assignment12.R
 import com.padc.batch9.assignment12.util.Utils
 import kotlinx.android.synthetic.main.activity_main.*
 
+
+
 class MainActivity : AppCompatActivity() {
 
     val RC_SIGN_IN: Int = 1
     lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var mGoogleSignInOptions: GoogleSignInOptions
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var callBackManager: CallbackManager
 
     companion object {
+        val EMAIL = "email"
         fun getLaunchIntent(context: Context) = Intent(context, MainActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         }
@@ -36,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         Utils.setStatusBarColor(this, R.color.textColorPrimaryLight)
         firebaseAuth = FirebaseAuth.getInstance()
         configureGoogleSignIn()
+        setUpFacebookSignIn()
         setUpOnClickListeners()
     }
 
@@ -45,6 +53,12 @@ class MainActivity : AppCompatActivity() {
             .requestEmail()
             .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, mGoogleSignInOptions)
+    }
+
+    private fun setUpFacebookSignIn() {
+        FacebookSdk.sdkInitialize(getApplicationContext())
+        AppEventsLogger.activateApp(this)
+        callBackManager = CallbackManager.Factory.create()
     }
 
     private fun setUpOnClickListeners() {

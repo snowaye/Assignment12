@@ -11,6 +11,8 @@
     <string name="label_email">Email</string>
     <string name="label_phone">Phone</string>
     <string name="label_btn_logout">Log Out</string>
+    <string name="facebook_app_id">833967803726437</string>
+    <string name="fb_login_protocol_scheme">fb833967803726437</string>
 
 
 </resources>
