@@ -1,4 +1,4 @@
-package mm.com.mytel.assignment12.util
+package com.padc.batch9.assignment12.util
 
 import android.app.Activity
 import android.os.Build

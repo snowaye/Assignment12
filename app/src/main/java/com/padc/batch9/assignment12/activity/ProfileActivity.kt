@@ -1,15 +1,15 @@
-package mm.com.mytel.assignment12.activity
+package com.padc.batch9.assignment12.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import mm.com.mytel.assignment12.R
-import mm.com.mytel.assignment12.util.Utils
+import com.padc.batch9.assignment12.R
+import com.padc.batch9.assignment12.util.Utils
 
-class MainActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_profile)
         Utils.setStatusBarColor(this, R.color.textColorPrimaryLight)
     }
 }

@@ -1,4 +1,4 @@
-package mm.com.mytel.assignment12
+package com.padc.batch9.assignment12
 
 import org.junit.Test
 
